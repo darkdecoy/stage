@@ -8087,12 +8087,14 @@ button.close {
   font-weight: 300;
   font-size: 128px;
   margin-bottom: 0;
+  text-shadow: 2px 2px 2px black;
 }
 
 /* line 23, ../sass/_cover-page.scss */
 .cover-subtitle {
   font-weight: 300;
   margin-top: 0;
+  text-shadow: 1px 1px 1px black;
 }
 
 /* line 1, ../sass/_article.scss */
