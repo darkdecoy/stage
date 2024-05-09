@@ -4,6 +4,8 @@ theme: "stage"
 metaDataFormat: "yaml"
 params:
 
+  lang: en-US
+
   # Website information
   title: "Stage"
   subtitle: "A Hugo theme for musicians and creative types."
