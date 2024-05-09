@@ -11,7 +11,7 @@
     <div class="col-sm-12">
       <article>
         <h3>Recent Posts</h3>
-        <hr />
+        <hr>
         {{ range first 5 (where .Data.Pages "Section" "post") }}
            {{ .Render "summary"}}
         {{ end }}

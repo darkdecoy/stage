@@ -7,12 +7,12 @@
     <header class="container article-header">
         <h1 class="title">{{ .Title }}</h1>
         {{ with .Description }}<h4 class="text-muted subtitle">{{ . }}</h4>{{ end }}
-        <hr />
+        <hr>
     </header>
     {{ with .Content }}
     <section class="container article-content">
       {{ . }}
-      <hr />
+      <hr>
     </section>
     {{ end }}
     <div class="container article-gallery">
@@ -20,7 +20,7 @@
          {{ range .Params.gallery }}
            <li class="col-sm-4">
              <a href="#" class="thumbnail img-modal">
-               <img class="img-modal" src="{{ . }}"></img>
+               <img alt="" class="img-modal" src="{{ . }}">
              </a>
             </li>
          {{ end }}

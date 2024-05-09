@@ -11,19 +11,19 @@
     <header class="container article-header">
         <h1 class="title">{{ .Title }}</h1>
         {{ with .Description }}<h4 class="subtitle">{{ . }}</h4>{{ end }}
-        <hr />
+        <hr>
     </header>
     <section class="container article-content">
       <div class="article-sidebar col-sm-3">
           <ul class="sidebar-info">
           {{ if eq .Site.Params.maps "true" }}
             <li>
-              <img class="street-view img-thumbnail" src="http://maps.googleapis.com/maps/api/streetview?size=300x300&location={{ .Params.map.lat }},{{ .Params.map.long }}&fov=90&heading={{ .Params.map.heading }}&pitch=0"></img>
+              <img alt="" class="street-view img-thumbnail" src="http://maps.googleapis.com/maps/api/streetview?size=300x300&location={{ .Params.map.lat }},{{ .Params.map.long }}&fov=90&heading={{ .Params.map.heading }}&pitch=0">
             </li>
           {{ else }}
             {{ with .Params.event.photo }}
             <li>
-              <img class="street-view img-thumbnail" src="{{ .Params.smallphoto }}"></img>
+              <img alt="" class="street-view img-thumbnail" src="{{ .Params.smallphoto }}">
             </li>
             {{ end }}
           {{ end }}

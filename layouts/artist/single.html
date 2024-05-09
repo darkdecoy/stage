@@ -7,14 +7,14 @@
     <header class="container article-header">
         <h1 class="title">{{ .Title }}</h1>
         <h4 class="subtitle">{{ .Description }}</h4>
-        <hr />
+        <hr>
     </header>
     <section class="container article-content">
       {{ .Content }}
     </section>
     <section class="container">
       <h3>Discography</h3>
-      <br />
+      <br>
       {{ range where .Site.Recent.ByDate.Reverse "Section" "album" }}
         {{ if eq .Params.author $author }}
           {{ .Render "summary" }}

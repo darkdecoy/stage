@@ -7,12 +7,12 @@
     <header class="container article-header">
         <h1 class="title">{{ .Title }}</h1>
         {{ with .Description }}<h4 class="subtitle">{{ . }}</h4>{{ end }}
-        <hr />
+        <hr>
     </header>
     <section class="container article-content">
       <div class="article-sidebar col-sm-3">
           <ul class="sidebar-info">
-            {{ with .Params.album.image }}<li><img class="album-image" src="{{ . }}"></img></li>{{ end }}
+            {{ with .Params.album.image }}<li><img class="album-image" src="{{ . }}"></li>{{ end }}
             {{ range $element := .Site.Params.authors }}
               {{ if eq $element.name $author }}
             <li class="text-muted">by <a href="{{ $element.link }}">{{ $element.name }}</a></li>
