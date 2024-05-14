@@ -15,7 +15,7 @@
     <section class="container">
       <h3>Albums</h3>
       <br>
-      {{ range where .Site.Pages "Section" "album" }}
+      {{ range where .Site.Pages "Section" "album" | first 6 }}
         {{ if eq .Params.author $author }}
           {{ .Render "summary" }}
         {{ end }}
