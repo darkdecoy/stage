@@ -5,6 +5,11 @@
   {{ with .Params.coverimage }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})"></div>{{ end }}
   <article id="main-container" >
     <header class="container article-header text-center">
+      {{ range $element := .Site.Params.authors }}
+        {{ if eq $element.name $author }}
+        <img alt="" class="avatar" src="{{ $element.image }}" width="30%">
+        {{ end }}
+      {{ end }}
         <h1 class="title">{{ .Title }}</h1>
         <h4 class="subtitle">{{ .Description }}</h4>
         <hr>
