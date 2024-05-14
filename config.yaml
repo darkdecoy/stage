@@ -5,6 +5,7 @@ metaDataFormat: "yaml"
 params:
 
   lang: en-US
+  copyright: Made with <i class="fa fa-heart-o"></i> by <a href="http://noahlange.com">Noah Lange</a>. Powered by <a href="http://hugo.spf13.com">Hugo</a>.
 
   # Website information
   title: "Stage"
