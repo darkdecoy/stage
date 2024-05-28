@@ -1,6 +1,6 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ with .Site.Params.coverimage }}<div id="cover-page" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})">{{ end }}
+{{ with .Site.Params.coverimage }}<div id="cover-page" style="background-image: url({{ . }})">{{ end }}
   <div class="container">
     {{ with .Site.Params.title }}<h1 class="cover-title">{{ . }}</h1>{{ end }}
     {{ with .Site.Params.subtitle }}<h3 class="cover-subtitle">{{ . }}</h3>{{ end }}
