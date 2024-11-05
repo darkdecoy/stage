@@ -11,11 +11,25 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
+        {{ if .Site.Params.navbar.artists }}
+        {{ range .Site.Params.navbar.artists}}<li><a href="{{ .destination }}">{{ .name }}</a></li>
+        {{ end }}
+        {{ end }}
+        {{ if .Site.Params.navbar.blog }}
         {{ with .Site.Params.navbar.blog }}<li><a href="{{ . }}">Blog</a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.navbar.bio }}
         {{ with .Site.Params.navbar.bio }}<li><a href="{{ . }}">Bio</a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.navbar.music }}
         {{ with .Site.Params.navbar.music }}<li><a href="{{ . }}">Music</a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.navbar.media }}
         {{ with .Site.Params.navbar.media }}<li><a href="{{ . }}">Media</a></li>{{ end }}
+        {{ end }}
+        {{ if .Site.Params.navbar.events }}
         {{ with .Site.Params.navbar.events }}<li><a href="{{ . }}">Events</a></li>{{ end }}
+        {{ end }}
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {{ if .Site.Params.social.facebook }}
