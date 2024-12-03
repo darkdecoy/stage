@@ -18,12 +18,11 @@
       {{ .Content }}
     </section>
     <section class="container">
-      <h3>Albums</h3>
+      <h3>Recent Albums</h3>
       <br>
-      {{ range where .Site.Pages "Section" "album" | first 6 }}
-        {{ if eq .Params.author $author }}
-          {{ .Render "summary" }}
-        {{ end }}
+      {{ $pages := where .Site.Pages "Params.author" "like" $author }}
+      {{ range where $pages "Section" "album" | first 5 }}
+        {{ .Render "summary" }}
       {{ end }}
     </section>
   </article>
