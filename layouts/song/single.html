@@ -17,11 +17,13 @@
             </li>
             {{ end }}
             <li class="text-muted">from <a href="{{ .Params.album.link }}">{{ .Params.album.title }}</a></li>
+            <li class="text-muted">by
             {{ range $element := .Site.Params.authors }}
-              {{ if eq $element.name $author }}
-            <li class="text-muted">by <a href="{{ $element.link }}">{{ $element.name }}</a></li>
+              {{ if in $author $element.name }}
+                <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a>
               {{ end }}
             {{ end }}
+            </li>
           </ul>
           <ul class="sidebar-purchase">
             <li>

@@ -13,11 +13,13 @@
       <div class="article-sidebar col-sm-3">
           <ul class="sidebar-info">
             {{ with .Params.album.image }}<li><img class="album-image" src="{{ . }}"></li>{{ end }}
+            <li class="text-muted">by
             {{ range $element := .Site.Params.authors }}
-              {{ if eq $element.name $author }}
-            <li class="text-muted">by <a href="{{ $element.link }}">{{ $element.name }}</a></li>
-              {{ end}}
+              {{ if in $author $element.name }}
+                <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a>
+              {{ end }}
             {{ end }}
+            </li>
             <li class="text-muted"><time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time></li>
           </ul>
           <ul class="sidebar-purchase">

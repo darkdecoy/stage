@@ -10,11 +10,18 @@
             <p>{{ .Summary }}</p>
           {{ end }}
           <div class="meta">
+            Written By
+          {{ $counter := 0 }}
           {{ range $element := .Site.Params.authors }}
-            {{ if eq $element.name $author }}
-            Written By <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a> &mdash;
+            {{ if in $author $element.name }}
+              {{ if gt $counter 0 }}
+                ,
+              {{ end }}
+              <a href="{{ $element.link }}"><address>{{ $element.name }}</address></a>
+              {{ $counter = add $counter 1 }}
             {{ end }}
           {{ end }}
+          &mdash;
             <time pubdate datetime="{{ .Date.Format "2006-01-02" }}" title="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
           </div>
         </div>

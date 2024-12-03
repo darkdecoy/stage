@@ -1,6 +1,6 @@
 {{ $author := .Params.author }}
 {{ range $element := .Site.Params.authors }}
-  {{ if eq $element.name $author }}
+  {{ if in $author $element.name }}
   <footer class="container article-footer">
     <hr>
     <div class="col-sm-12">
