@@ -17,6 +17,7 @@
     {{ end }}
     <div class="container article-gallery">
        <ul>
+        {{ if .Params.gallery }}
          {{ range .Params.gallery }}
            <li class="col-sm-4">
              <a href="#" class="thumbnail img-modal">
@@ -24,6 +25,7 @@
              </a>
             </li>
          {{ end }}
+        {{ end }}
        </ul>
     </div>
     {{ partial "articlefooter.html" . }}
